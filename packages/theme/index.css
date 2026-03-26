@@ -1,0 +1,75 @@
+@import "./reset.css";
+
+:root {
+  /* colors */
+  --song-color-white: #ffffff;
+  --song-color-black: #000000;
+  --colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+  --song-bg-color: #ffffff;
+  --song-bg-color-page: #f2f3f5;
+  --song-bg-color-overlay: #ffffff;
+  --song-text-color-primary: #303133;
+  --song-text-color-regular: #606266;
+  --song-text-color-secondary: #909399;
+  --song-text-color-placeholder: #a8abb2;
+  --song-text-color-disabled: #c0c4cc;
+  --song-border-color: #dcdfe6;
+  --song-border-color-light: #e4e7ed;
+  --song-border-color-lighter: #ebeef5;
+  --song-border-color-extra-light: #f2f6fc;
+  --song-border-color-dark: #d4d7de;
+  --song-border-color-darker: #cdd0d6;
+  --song-fill-color: #f0f2f5;
+  --song-fill-color-light: #f5f7fa;
+  --song-fill-color-lighter: #fafafa;
+  --song-fill-color-extra-light: #fafcff;
+  --song-fill-color-dark: #ebedf0;
+  --song-fill-color-darker: #e6e8eb;
+  --song-fill-color-blank: #ffffff;
+
+  @each $val, $color in var(--colors) {
+    --song-color-$(val): $(color);
+    @for $i from 3 to 9 {
+      --song-color-$(val)-light-$(i): mix(#fff, $(color), 0$ (i));
+    }
+    --song-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+  }
+
+  /* border */
+  --song-border-width: 1px;
+  --song-border-style: solid;
+  --song-border-color-hover: var(--song-text-color-disabled);
+  --song-border: var(--song-border-width) var(--song-border-style)
+    var(--song-border-color);
+  --song-border-radius-base: 4px;
+  --song-border-radius-small: 2px;
+  --song-border-radius-round: 20px;
+  --song-border-radius-circle: 100%;
+
+  /*font*/
+  --song-font-size-extra-large: 20px;
+  --song-font-size-large: 18px;
+  --song-font-size-medium: 16px;
+  --song-font-size-base: 14px;
+  --song-font-size-small: 13px;
+  --song-font-size-extra-small: 12px;
+  --song-font-family:
+    "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
+  --song-font-weight-primary: 500;
+
+  /*disabled*/
+  --song-disabled-bg-color: var(--song-fill-color-light);
+  --song-disabled-text-color: var(--song-text-color-placeholder);
+  --song-disabled-border-color: var(--song-border-color-light);
+
+  /*animation*/
+  --song-transition-duration: 0.4s;
+  --song-transition-duration-fast: 0.2s;
+}
