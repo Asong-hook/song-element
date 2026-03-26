@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --filter @song-element/play dev"
+    "dev": "pnpm --filter @song-element/play dev",
+    "docs:dev": "pnpm --filter @song-element/docs dev",
+    "docs:build": "pnpm --filter @song-element/docs build"
   },
   "keywords": [],
   "author": "",
